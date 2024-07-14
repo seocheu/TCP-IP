@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane prefHeight="380.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tcpclient.HelloController">
+  <top>
+    <VBox alignment="CENTER">
+      <HBox alignment="CENTER">
+        <padding>
+          <Insets topRightBottomLeft="10.0">
+          </Insets>
+        </padding>
+        <spacing>20.0</spacing>
+        <Label alignment="CENTER" prefHeight="20.0" prefWidth="100.0" text="TEMPERATURE" />
+        <ProgressBar fx:id="progressBar_temperature" prefHeight="20.0" prefWidth="350.0" />
+        <Label fx:id="label_temperature" prefHeight="20.0" prefWidth="50.0" text="온도" />
+      </HBox>
+      <HBox alignment="CENTER">
+        <padding>
+          <Insets topRightBottomLeft="10.0">
+          </Insets>
+        </padding>
+        <spacing>20.0</spacing>
+        <Label alignment="CENTER" prefHeight="20.0" prefWidth="100.0" text="HUMIDITY" />
+        <ProgressBar fx:id="progressBar_humidity" prefHeight="20.0" prefWidth="350.0" />
+        <Label fx:id="label_humidity" prefHeight="20.0" prefWidth="50.0" text="습도" />
+      </HBox>
+    </VBox>
+  </top>
+  <center>
+    <VBox>
+      <padding>
+        <Insets topRightBottomLeft="50.0">
+        </Insets>
+      </padding>
+      <HBox alignment="CENTER">
+        <spacing>40.0</spacing>
+        <Circle fx:id="red_led" fill="#9f4f4f" radius="50.0" stroke="black" />
+            <Slider fx:id="red_slider" max="255.0" orientation="VERTICAL" prefHeight="74.0" prefWidth="14.0" value="255.0" />
+        <Circle fx:id="green_led" fill="#4f9f4f" radius="50.0" stroke="black" />
+            <Slider fx:id="green_slider" max="255.0" orientation="VERTICAL" prefHeight="78.0" prefWidth="14.0" value="255.0" />
+        <Circle fx:id="blue_led" fill="#4f4f9f" radius="50.0" stroke="black" />
+            <Slider fx:id="blue_slider" max="255.0" orientation="VERTICAL" prefHeight="78.0" prefWidth="14.0" value="255.0" />
+      </HBox>
+      <HBox alignment="CENTER">
+        <spacing>20.0</spacing>
+        <Label alignment="CENTER" prefHeight="30.0" prefWidth="250.0" text="RED LED" />
+        <Label alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="GREEN LED" />
+        <Label alignment="CENTER" prefHeight="30.0" prefWidth="250.0" text="BLUE LED" />
+      </HBox>
+    </VBox>
+  </center>
+  <bottom>
+    <HBox alignment="CENTER" prefHeight="3.0" prefWidth="493.0">
+      <padding>
+        <Insets topRightBottomLeft="20.0" />
+      </padding>
+      <spacing>20.0</spacing>
+      <Button fx:id="button_red_led" onAction="#buttonOnclickedRedLED" prefHeight="20.0" prefWidth="140.0" text="RED LED" />
+      <Button fx:id="button_green_led" onAction="#buttonOnclickedGreenLED" prefHeight="20.0" prefWidth="140.0" text="GREEN LED" />
+      <Button fx:id="button_blue_led" onAction="#buttonOnclickedBlueLED" prefHeight="20.0" prefWidth="140.0" text="BLUE LED" />
+      <Button fx:id="button_record" onAction="#recording" prefHeight="20.0" prefWidth="140.0" text="RECORD" />
+      <Button fx:id="button_play" onAction="#playback" prefHeight="20.0" prefWidth="140.0" text="PLAYBACK" />
+    </HBox>
+  </bottom>
+</BorderPane>
